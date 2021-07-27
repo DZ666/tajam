@@ -13,10 +13,34 @@ import SendMessageForm from "../SendMessageForm/SendMessageFormComponent"
 import Footer from "../Footer/FooterComponent"
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.video = React.createRef()
+    this.handleClickOutside = this.handleClickOutside.bind(this)
+  }
+
+  handleClickOutside(event) {
+    if (this.video && !this.video.current.contains(event.target)) {
+        this.props.closeWindow()
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside)
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside)
+  }
+
   render () {
-    let video = <div className={"video-window" + (this.props.actions.loadings.is_open_video_winodw ? " open-window" : " window-hide")}>
+    let video = <div ref={this.video} className={"video-window" + (this.props.actions.loadings.is_open_video_winodw ? " open-window" : " window-hide")}>
       <div id="close-window" onClick={this.props.closeWindow}></div>
-      <iframe className="frame" src="https://www.youtube.com/embed/KvUgaHTNit4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      {
+        this.props.actions.loadings.is_open_video_winodw
+        ? <iframe className="frame" src="https://www.youtube.com/embed/KvUgaHTNit4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        : null
+      }
     </div>
 
     return (

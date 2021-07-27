@@ -1,5 +1,7 @@
-import { SUCCESS_ALERT, INFO_ALERT, ERROR_ALERT, CLEAR_ALERT } from '../types/alerts'
+// TYPES IMPORT
+  import { SUCCESS_ALERT, INFO_ALERT, ERROR_ALERT, CLEAR_ALERT } from '../types/alerts'
 
+// Default Data, If I don't add it, I'll take an error
 const initialState = {
   msg: null,
   type: null,
@@ -7,7 +9,7 @@ const initialState = {
   additionalInfo: null,
 }
 
-export default (state = initialState, action) => {
+const actionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SUCCESS_ALERT:
       return {
@@ -44,3 +46,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default actionsReducer

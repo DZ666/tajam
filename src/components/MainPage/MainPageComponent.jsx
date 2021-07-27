@@ -4,8 +4,6 @@ import { withRouter } from "react-router-dom";
 
 import { connect } from "react-redux"
 
-import { withAlert } from "react-alert"
-
 import { openWindow, closeWindow } from "../../redux/actions/action.actions.js"
 
 import MainPage from "./MainPage"

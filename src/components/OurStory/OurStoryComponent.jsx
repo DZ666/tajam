@@ -1,6 +1,9 @@
+// Defailt Imports
 import React from 'react'
 
-import OurStory from "./OurStory"
+// Additional imports
+	// Component
+		import OurStory from "./OurStory"
 
 class OurStoryComponent extends React.Component {
   render () {

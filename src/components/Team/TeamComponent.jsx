@@ -1,15 +1,15 @@
-import React from 'react'
+// Default Imports
+	import React from 'react'
 
-import { withRouter } from "react-router-dom";
+	import { withRouter } from "react-router-dom";
 
-import { connect } from "react-redux"
+	import { connect } from "react-redux"
 
-import { withAlert } from "react-alert"
-
-import { openReview, closeReview } from "../../redux/actions/action.actions.js"
-
-// Imports
-import Team from "./Team.jsx"
+// Additional Imports
+	// Actions Funcs
+		import { openReview, closeReview } from "../../redux/actions/action.actions.js"
+	// Components
+    	import Team from "./Team.jsx"
 
 class TeamComponent extends React.Component {
   render () {
@@ -23,6 +23,7 @@ let mapStateToProps = (state) => {
   }
 }
 
+// Integrate open and close review actions
 let mapDispatchToProps = (dispatch, ownProps) => {
   return {
     openReview: (id) => {
@@ -34,8 +35,10 @@ let mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
+// Hooking VideoComponent with "withRouter"
 let withTeamComponent = withRouter(TeamComponent)
 
+// Connecting VideoComponent with redux
 export default connect(
   mapStateToProps,
   mapDispatchToProps

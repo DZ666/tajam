@@ -1,14 +1,15 @@
-import React from 'react'
+// Default Imoprts
+	import React from 'react'
 
-import { withRouter } from "react-router-dom";
+	import { withRouter } from "react-router-dom";
 
-import { connect } from "react-redux"
+	import { connect } from "react-redux"
 
-import { withAlert } from "react-alert"
-
-// Imports
-import SendMessageForm from "./SendMessageForm"
-import { sendMessage } from "../../redux/actions/action.actions.js"
+// Additional Imports
+	// Actions
+		import { sendMessage } from "../../redux/actions/action.actions.js"
+	// Components
+		import SendMessageForm from "./SendMessageForm"
 
 class SendMessageFormComponent extends React.Component {
 
@@ -25,6 +26,7 @@ let mapStateToProps = (state) => {
   return {}
 }
 
+// Integrate open and close review actions
 let mapDispatchToProps = (dispatch, ownProps) => {
   return {
     sendMessage: (data) => {
@@ -33,8 +35,10 @@ let mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
+// Hooking VideoComponent with "withRouter"
 let withSendMessageFormComponent = withRouter(SendMessageFormComponent)
 
+// Connecting VideoComponent with redux
 export default connect(
   mapStateToProps,
   mapDispatchToProps

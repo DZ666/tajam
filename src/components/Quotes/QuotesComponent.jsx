@@ -1,15 +1,15 @@
+// Default Iimports
 import React from 'react'
 
 import { withRouter } from "react-router-dom";
 
 import { connect } from "react-redux"
 
-import { withAlert } from "react-alert"
-
-import { openQuotesReview, closeQuotesReview } from "../../redux/actions/action.actions.js"
-
-// Imports
-import Quotes from "./Quotes"
+// Additional Imports
+	// Actions Imports
+		import { openQuotesReview, closeQuotesReview } from "../../redux/actions/action.actions.js"
+	// Components
+		import Quotes from "./Quotes"
 
 class QuotesComponent extends React.Component {
   render () {
@@ -23,6 +23,7 @@ let mapStateToProps = (state) => {
   }
 }
 
+// Integrate open and close quotes actions
 let mapDispatchToProps = (dispatch, ownProps) => {
   return {
   openQuotesReview: (id) => {
@@ -34,8 +35,10 @@ let mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
+// Hooking QuotesComponent with "withRouter"
 let withQuotesComponent = withRouter(QuotesComponent)
 
+// Connecting QuotesComponent with redux
 export default connect(
   mapStateToProps,
   mapDispatchToProps

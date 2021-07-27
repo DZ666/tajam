@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react"
+import { Link } from "react-router-dom"
 
 class WorksContent extends React.Component {
 
@@ -28,14 +29,14 @@ class WorksContent extends React.Component {
 
   render () {
     return (
-      <div className="work-list row col-12">
-        <div className="d-flex flex-md-wrap flex-sm-wrap overflow-sm-scroll col-12">
+      <section className="work-list">
+        <div className="work-list__inner-wrapper col-12">
           { this.state.works_dom }
         </div>
-        <div className="col-12 d-flex justify-content-center pt-70 pb-70">
-          <input className="submit-btn" type="submit" value="LOAD MORE"/>
+        <div className="col-12 works-block">
+          <Link className="submit-btn" to="/">LOAD MORE</Link>
         </div>
-      </div>
+	</section>
     )
   }
 }

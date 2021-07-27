@@ -1,14 +1,15 @@
-import React from 'react'
+// Default Imports
+  import React from 'react'
 
-import { withRouter } from "react-router-dom";
+  import { withRouter } from "react-router-dom";
 
-import { connect } from "react-redux"
+  import { connect } from "react-redux"
 
-import { withAlert } from "react-alert"
-
-import { openWindow, closeWindow } from "../../redux/actions/action.actions.js"
-
-import Video from "./Video"
+// Additional imports
+  // Actions Funcs
+    import { openWindow, closeWindow } from "../../redux/actions/action.actions.js"
+  // Components
+    import Video from "./Video"
 
 class VideoComponent extends React.Component {
   render () {
@@ -16,12 +17,14 @@ class VideoComponent extends React.Component {
   }
 }
 
+// All redux state
 let mapStateToProps = (state) => {
   return {
     ...state
   }
 }
 
+// Integrate open and close winodw actions
 let mapDispatchToProps = (dispatch, ownProps) => {
   return {
     openWindow: () => {
@@ -33,8 +36,10 @@ let mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
+// Hooking VideoComponent with "withRouter"
 let withVideoComponent = withRouter(VideoComponent)
 
+// Connecting VideoComponent with redux
 export default connect(
   mapStateToProps,
   mapDispatchToProps

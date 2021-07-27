@@ -1,6 +1,6 @@
-import React from 'react'
-
-// Imports
+// Default Imports
+  import React from 'react'
+  import { Link } from "react-router-dom"
 
 class Team extends React.Component {
 
@@ -19,7 +19,7 @@ class Team extends React.Component {
               await this.props.openReview(review.id)
               await this.dispalyReviews()
             }}>
-            
+
             <img src={review.img} alt={review.name}/>
           </div>
           <div className="team-card-title_profession-wrapper">
@@ -46,21 +46,21 @@ class Team extends React.Component {
   }
 
   render() {
-    return (<div className="team d-flex justify-content-center align-items-start pt-70 pb-70">
-      <div className="container inner-team d-flex justify-content-center align-items-start row">
-        <div className="title-wrapper w-100 d-flex justify-content-center align-items-start row pb-50 col-12">
-          <h1 className="title white-color ta-l p-0 pb-30 w-100">MEET OUR AMAZING TEAM</h1>
-          <p className="sm-t p-0 white-sm-t grey-underline">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
+    return (<section className="team">
+      <div className="container inner-team">
+        <div className="title-wrapper">
+          <h2 className="title team-title">MEET OUR AMAZING TEAM</h2>
+          <p className="team-subtitle grey-underline">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
         </div>
-        <div className="team-cards-wrapper col-12 d-flex justify-content-center pb-70 row col-sm-12">
+        <div className="team-cards-wrapper col-12">
           { this.state.reviews }
         </div>
-        <div className="row d-flex justify-content-center">
-          <p className="sm-t pb-30 mb-0">Become part of our dream team, let's join us !</p>
-          <input className="submit-btn" type="submit" value="WE ARE HIRING"/>
+        <div className="team-block">
+          <p className="team-small-title">Become part of our dream team, let's join us !</p>
+		  <Link className="submit-btn" to ="/">WE ARE HIRING</Link>
         </div>
       </div>
-    </div>)
+    </section>)
   }
 }
 

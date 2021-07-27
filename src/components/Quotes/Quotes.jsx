@@ -1,15 +1,10 @@
+// Default Imports
 import React from 'react'
 
 import Slider from "react-slick"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-
-import face_1_webp from "../../assets/images/photos/face-1.webp"
-import face_2_webp from "../../assets/images/photos/face-2.webp"
-import face_3_webp from "../../assets/images/photos/face-3.webp"
-import face_4_webp from "../../assets/images/photos/face-4.webp"
-import face_5_webp from "../../assets/images/photos/face-5.webp"
 
 class Quotes extends React.Component {
 
@@ -28,8 +23,8 @@ class Quotes extends React.Component {
     this.setState({
       reviews_1: [ this.props.actions.slack_reviews.map((review, index) => {
         return <div className="d-flex flex-wrap justify-content-center" key={review + "-id"}>
-          <div className="title-wrapper w-100 d-flex justify-content-center align-items-start row pb-45 col-12">
-            <h1 className="title ta-l p-0 pb-30 w-100">“</h1>
+          <div className="title-wrapper employ-review col-12">
+            <h2 className="title ta-l p-0 pb-30 w-100">“</h2>
             <p className="sm-t p-0 white-sm-t col-lg-6 col-md-8 col-sm-12">{review.review}</p>
           </div>
           <div className="review-title d-flex flex-wrap justify-content-center col-12">
@@ -102,7 +97,7 @@ class Quotes extends React.Component {
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: '80px',
+            centerPadding: '90px',
             slidesToShow: 1
           }
         },
@@ -118,7 +113,7 @@ class Quotes extends React.Component {
       ]
     }
     return (
-      <div className="quotes d-flex justify-content-center align-items-start pt-70 pb-70">
+      <section className="quotes d-flex justify-content-center align-items-start pt-70 pb-70">
         <div className="container inner-quotes d-flex justify-content-center align-items-start row">
 
           <Slider {...settings_for} ref={slider => (this.slider1 = slider)} className="review-title d-flex flex-wrap justify-content-center col-12">
@@ -128,7 +123,7 @@ class Quotes extends React.Component {
             { this.state.reviews_2 }
           </Slider>
         </div>
-      </div>
+      </section>
     )
   }
 }

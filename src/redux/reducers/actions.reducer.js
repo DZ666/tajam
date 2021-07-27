@@ -1,46 +1,42 @@
-import React from "react"
+// TYPES IMPORT
+  import {
+    IS_SEND_LOADING,
+    IS_SEND_FAILED_LOADING,
+    IS_SEND_LOADED,
+    OPEN_VIDEO,
+    CLOSE_VIDEO,
+    OPEN_REVIEW,
+    CLOSE_REVIEW,
+    OPEN_QUOTES_REVIEW,
+    CLOSE_QUOTES_REVIEW
+  } from "../types/actions.js"
 
-// Actions API
-import API from "../../api/Actions"
+// Images Imports
+  import semf_ucuk_webp from "../../assets/images/photos/semf_ucuk.webp"
+  import dik_adalin_webp from "../../assets/images/photos/dik_adalin.webp"
+  import jeng_kol_webp from "../../assets/images/photos/jeng_kol.webp"
+  import pet_romak_webp from "../../assets/images/photos/pet_romak.webp"
 
-import {
-  IS_SEND_LOADING,
-  IS_SEND_FAILED_LOADING,
-  IS_SEND_LOADED,
-  OPEN_VIDEO,
-  CLOSE_VIDEO,
-  OPEN_REVIEW,
-  CLOSE_REVIEW,
-  OPEN_QUOTES_REVIEW,
-  CLOSE_QUOTES_REVIEW
-} from "../types/actions.js"
+  import work1 from "../../assets/images/works/work1.webp"
+  import work2 from "../../assets/images/works/work2.webp"
+  import work3 from "../../assets/images/works/work3.webp"
+  import work4 from "../../assets/images/works/work4.webp"
+  import work5 from "../../assets/images/works/work5.webp"
+  import work6 from "../../assets/images/works/work6.webp"
+  import work7 from "../../assets/images/works/work7.webp"
+  import work8 from "../../assets/images/works/work8.webp"
+  import work9 from "../../assets/images/works/work9.webp"
+  import work10 from "../../assets/images/works/work10.webp"
+  import work11 from "../../assets/images/works/work11.webp"
+  import work12 from "../../assets/images/works/work12.webp"
 
-// Images
-import semf_ucuk_webp from "../../assets/images/photos/semf_ucuk.webp"
-import dik_adalin_webp from "../../assets/images/photos/dik_adalin.webp"
-import jeng_kol_webp from "../../assets/images/photos/jeng_kol.webp"
-import pet_romak_webp from "../../assets/images/photos/pet_romak.webp"
+  import face_1_webp from "../../assets/images/photos/face-1.webp"
+  import face_2_webp from "../../assets/images/photos/face-2.webp"
+  import face_3_webp from "../../assets/images/photos/face-3.webp"
+  import face_4_webp from "../../assets/images/photos/face-4.webp"
+  import face_5_webp from "../../assets/images/photos/face-5.webp"
 
-import work1 from "../../assets/images/works/work1.webp"
-import work2 from "../../assets/images/works/work2.webp"
-import work3 from "../../assets/images/works/work3.webp"
-import work4 from "../../assets/images/works/work4.webp"
-import work5 from "../../assets/images/works/work5.webp"
-import work6 from "../../assets/images/works/work6.webp"
-import work7 from "../../assets/images/works/work7.webp"
-import work8 from "../../assets/images/works/work8.webp"
-import work9 from "../../assets/images/works/work9.webp"
-import work10 from "../../assets/images/works/work10.webp"
-import work11 from "../../assets/images/works/work11.webp"
-import work12 from "../../assets/images/works/work12.webp"
-
-import face_1_webp from "../../assets/images/photos/face-1.webp"
-import face_2_webp from "../../assets/images/photos/face-2.webp"
-import face_3_webp from "../../assets/images/photos/face-3.webp"
-import face_4_webp from "../../assets/images/photos/face-4.webp"
-import face_5_webp from "../../assets/images/photos/face-5.webp"
-
-// Initial
+// Default Data, If I don't add it, I'll take an error
 let initialState = {
   data: null,
   loadings: {
@@ -87,7 +83,7 @@ let initialState = {
       img: face_1_webp,
       name: "SIND RATES",
       profession: "PROGRAMMER",
-      review: "Port 1 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum consequat auctor eu in elit.",
       is_open: false
     },
     {
@@ -95,7 +91,7 @@ let initialState = {
       img: face_2_webp,
       name: "MARTIN LUMBER",
       profession: "DESIGNER",
-      review: "Port 2 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      review: "Port 2 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
       is_open: false
     },
     {
@@ -103,7 +99,7 @@ let initialState = {
       img: face_3_webp,
       name: "JANE GALADRIEL",
       profession: "CEO TENGKUREP",
-      review: "Port 3 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      review: "Port 3 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus..",
       is_open: false
     },
     {
@@ -111,7 +107,7 @@ let initialState = {
       img: face_4_webp,
       name: "MARGO SAM",
       profession: "PROGRAMMER",
-      review: "Port 4 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      review: "Port 4 This is Photoshop's version  of Lorem Ipsum. Nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
       is_open: false
     },
     {
@@ -119,7 +115,7 @@ let initialState = {
       img: face_5_webp,
       name: "JIMMY LAVAN",
       profession: "tESTER",
-      review: "Port 5 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      review: "Port 5 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
       is_open: false
     },
   ],
@@ -187,7 +183,7 @@ let initialState = {
   ]
 }
 
-// Types
+// All Action Project Requires here
 const actionsReducer = (state = initialState, action) => {
 
   switch (action.type) {

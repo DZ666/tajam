@@ -1,22 +1,22 @@
+// Main Imports
 import React from 'react'
 import {
-	BrowserRouter as Router,
   Route,
   Switch,
 } from "react-router-dom"
 
-// Pages
+// Pages Imports
 import MainPage from "../MainPage/MainPageComponent"
 
 class App extends React.Component {
   render () {
     return(
-				<Switch>
-					<Route exact path="/">
-						<MainPage {...this.props} />
-					</Route>
-				</Switch>
-    )
+		<Switch>
+			<Route exact path="/">
+				<MainPage {...this.props} />
+			</Route>
+		</Switch>
+	)
   }
 }
 

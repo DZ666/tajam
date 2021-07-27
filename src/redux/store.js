@@ -1,14 +1,14 @@
-import { combineReducers, applyMiddleware, createStore } from "redux"
+// Default Imports
+  import { combineReducers, applyMiddleware, createStore } from "redux"
+  import { reducer as formReducer } from "redux-form"
+  import thunk from "redux-thunk"
 
-import ationsReducer from "./reducers/actions.reducer.js"
-import alertReducer from "./reducers/alert.reducer.js"
-
-import thunk from "redux-thunk"
-
-import { reducer as formReducer } from "redux-form"
+// Reducer Imports
+  import actionsReducer from "./reducers/actions.reducer.js"
+  import alertReducer from "./reducers/alert.reducer.js"
 
 let reducersBatch = combineReducers({
-  actions: ationsReducer,
+  actions: actionsReducer,
   alert: alertReducer,
   form: formReducer,
 })
